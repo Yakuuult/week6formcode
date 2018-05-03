@@ -58,3 +58,11 @@ var credentials = {key: privateKey, cert: certificate};
 var httpsServer = https.createServer(credentials, app);
 httpsServer.listen(4443);
 
+app.post('/uploadData',function(req,res){
+// note that we are using POST here as we are uploading data
+// so the parameters form part of the BODY of the request rather than the RESTful API
+console.dir(req.body);
+// for now, just echo the request back to the client
+res.send(req.body);
+});
+
