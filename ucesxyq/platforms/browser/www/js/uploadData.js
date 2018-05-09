@@ -3,19 +3,20 @@ var client;
 
 function startDataUpload() {
 alert ("start data upload");
-var name = document.getElementById("name").value;
+var clientid = document.getElementById("clientid").value;
 var surname = document.getElementById("surname").value;
 var module = document.getElementById("module").value;
-alert(name + " "+ surname + " "+module);
-var postString = "name="+name +"&surname="+surname+"&module="+module; 
+alert(clientid + " "+ surname + " "+module);
+var postString = "clientid="+clientid +"&surname="+surname+"&module="+module; 
 
 // now get the radio button values
-if (document.getElementById("morning").checked) {
-postString=postString+"&lecturetime=morning";
+if (document.getElementById("answer1").checked) {
+postString=postString+"&correctanswer=1";
 }
-if (document.getElementById("afternoon").checked) {
-postString=postString+"&lecturetime=afternoon";
+if (document.getElementById("answer2").checked) {
+postString=postString+"&correctanswer=2";
 }
+
 
 // now get the select box values
 var language = document.getElementById("languageselectbox").value;
